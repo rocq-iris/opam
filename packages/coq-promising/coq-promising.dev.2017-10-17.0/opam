@@ -1,0 +1,15 @@
+opam-version: "1.2"
+name: "coq-promising"
+maintainer: "Hoang-Hai Dang <haidang@mpi-sws.org>"
+authors: "The Promising semantics team"
+homepage: "https://gitlab.mpi-sws.org/FP/promising"
+bug-reports: "https://gitlab.mpi-sws.org/FP/promising/issues"
+dev-repo: "https://gitlab.mpi-sws.org/FP/promising.git"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: [ "sh" "-c" "rm -rf '%{lib}%/coq/user-contrib/promising'" ]
+depends: [
+  "coq" { >= "8.6.1" & < "8.8~" }
+  "coq-mathcomp-ssreflect" { (>= "1.6.1" & < "1.7~") | (= "dev") }
+  "coq-stdpp" { (= "dev.2017-09-29.0") | (= "dev") }
+]
