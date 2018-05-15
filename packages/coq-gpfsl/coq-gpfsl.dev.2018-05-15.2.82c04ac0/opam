@@ -1,0 +1,15 @@
+opam-version: "1.2"
+name: "coq-gpfsl"
+maintainer: "Hoang-Hai Dang <haidang@mpi-sws.org>"
+authors: "Hoang-Hai Dang <haidang@mpi-sws.org>"
+homepage: "https://gitlab.mpi-sws.org/FP/gpfsl"
+bug-reports: "https://gitlab.mpi-sws.org/FP/gpfsl/issues"
+dev-repo: "https://gitlab.mpi-sws.org/FP/gpfsl.git"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: [ "sh" "-c" "rm -rf '%{lib}%/coq/user-contrib/gpfsl'" ]
+depends: [
+  "coq" { (>= "8.7.1" & < "8.8~") | (= "dev") }
+  "coq-iris" { (= "branch.gen_proofmode.2018-05-09.3.a06fe198") | (= "dev") }
+  "coq-promising" { (= "dev.2018-05-15.1.5c586354") | (= "dev") }
+]
