@@ -1,0 +1,14 @@
+opam-version: "1.2"
+name: "coq-orc11"
+maintainer: "Hoang-Hai Dang <haidang@mpi-sws.org>"
+authors: "The ORC11 semantics team"
+homepage: "https://gitlab.mpi-sws.org/iris/orc11"
+bug-reports: "https://gitlab.mpi-sws.org/iris/orc11/issues"
+dev-repo: "https://gitlab.mpi-sws.org/iris/orc11.git"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-rf" "%{lib}%/coq/user-contrib/orc11"]
+depends: [
+  "coq" { (>= "8.7.0" & < "8.10~") | (= "dev") }
+  "coq-stdpp" { (= "dev.2019-02-07.1.824e9723") | (= "dev") }
+]
