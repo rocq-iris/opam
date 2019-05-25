@@ -9,5 +9,5 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-rf" "%{lib}%/coq/user-contrib/Autosubst"]
 depends: [
-  "coq" { (>= "8.6" & < "8.10~") | (= "dev") }
+  "coq" { (>= "8.6" & < "8.11~") | (= "dev") }
 ]
