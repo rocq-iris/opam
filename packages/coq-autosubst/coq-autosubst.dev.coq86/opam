@@ -1,13 +1,19 @@
-opam-version: "1.2"
+opam-version: "2.0"
 name: "coq-autosubst"
 maintainer: "Ralf Jung <jung@mpi-sws.org>"
 authors: "Steven Schäfer, Tobias Tebbi"
 homepage: "https://www.ps.uni-saarland.de/autosubst/"
 license: "MIT"
-dev-repo: "https://github.com/uds-psl/autosubst.git"
+dev-repo: "git+https://github.com/uds-psl/autosubst.git"
 build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-rf" "%{lib}%/coq/user-contrib/Autosubst"]
 depends: [
-  "coq" { (>= "8.6" & < "8.12~") | (= "dev") }
+  "ocaml"
+  "coq" {(>= "8.6" & < "8.12~") | (= "dev")}
 ]
+synopsis: "Autosubst is a Coq library for parallel de Bruijn substitutions"
+flags: light-uninstall
+url {
+  src: "git+https://github.com/RalfJung/autosubst#coq86-devel"
+}

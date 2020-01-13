@@ -1,15 +1,22 @@
-opam-version: "1.2"
+opam-version: "2.0"
 name: "coq-gpfsl"
 maintainer: "Hoang-Hai Dang <haidang@mpi-sws.org>"
 authors: "Hoang-Hai Dang <haidang@mpi-sws.org>"
 homepage: "https://gitlab.mpi-sws.org/FP/gpfsl"
 bug-reports: "https://gitlab.mpi-sws.org/FP/gpfsl/issues"
-dev-repo: "https://gitlab.mpi-sws.org/FP/gpfsl.git"
+dev-repo: "git+https://gitlab.mpi-sws.org/FP/gpfsl.git"
 build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: [ "sh" "-c" "rm -rf '%{lib}%/coq/user-contrib/gpfsl'" ]
 depends: [
-  "coq" { (>= "8.7.1" & < "8.8~") | (= "dev") }
-  "coq-iris" { (= "branch.gen_proofmode.2018-04-09.1") | (= "dev") }
-  "coq-promising" { (= "dev.2018-04-23.2.7d1409ce") | (= "dev") }
+  "ocaml"
+  "coq" {(>= "8.7.1" & < "8.8~") | (= "dev")}
+  "coq-iris" {(= "branch.gen_proofmode.2018-04-09.1") | (= "dev")}
+  "coq-promising" {(= "dev.2018-04-23.2.7d1409ce") | (= "dev")}
 ]
+synopsis:
+  "A combination of GPS and FSL in the promising semantics WITHOUT promises."
+url {
+  src:
+    "git+https://gitlab.mpi-sws.org/FP/gpfsl.git#6f5292eddf65cdac64ff03e98d0188037659a8bb"
+}
