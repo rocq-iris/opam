@@ -16,4 +16,4 @@ depends: [
 
 build: [make "-j%{jobs}%"]
 install: [make "install"]
-url { src: "https://gitlab.mpi-sws.org/iris/iris.git#db614d95197bade7ac8e467ae91201045aa45ce7" }
+url { src: "git+https://gitlab.mpi-sws.org/iris/iris.git#db614d95197bade7ac8e467ae91201045aa45ce7" }
