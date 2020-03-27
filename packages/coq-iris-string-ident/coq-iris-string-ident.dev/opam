@@ -27,5 +27,5 @@ tags: [
 ]
 
 url {
-  src: "git+https://gitlab.mpi-sws.org/iris/string-ident#master"
+  src: "git+https://gitlab.mpi-sws.org/iris/string-ident#v8.11"
 }
