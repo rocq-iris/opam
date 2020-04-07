@@ -23,7 +23,7 @@ install: [make "install"]
 tags: [
   "category:Miscellaneous/Coq Extensions"
   "keyword:iris"
-  "logpath:IrisStringIdent"
+  "logpath:iris_string_ident"
 ]
 
 url {
