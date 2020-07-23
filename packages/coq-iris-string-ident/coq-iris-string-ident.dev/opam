@@ -13,7 +13,7 @@ This package implements string_to_ident in Ltac2, enabling support for Gallina n
 """
 
 depends: [
-  "coq" {>= "8.11"}
+  "coq" {>= "8.11" & < "8.13~"}
   "coq-iris" {>= "dev.2020-04-07.0.86b62616" | (>= "3.3.0" & < "4.0") | = "dev"}
 ]
 
@@ -27,5 +27,5 @@ tags: [
 ]
 
 url {
-  src: "git+https://gitlab.mpi-sws.org/iris/string-ident#v8.11"
+  src: "git+https://gitlab.mpi-sws.org/iris/string-ident"
 }
