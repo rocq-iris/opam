@@ -10,10 +10,10 @@ install: [make "install"]
 remove: ["rm" "-rf" "%{lib}%/coq/user-contrib/Autosubst"]
 depends: [
   "ocaml"
-  "coq" {(>= "8.6" & < "8.13~") | (= "dev")}
+  "coq" {(>= "8.9" & < "8.13~") | (= "dev")}
 ]
 synopsis: "Autosubst is a Coq library for parallel de Bruijn substitutions"
 flags: light-uninstall
 url {
-  src: "git+https://github.com/RalfJung/autosubst#coq86-devel"
+  src: "git+https://github.com/coq-community/autosubst"
 }
