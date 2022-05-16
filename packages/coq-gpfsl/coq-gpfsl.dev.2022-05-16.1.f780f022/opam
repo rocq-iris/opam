@@ -1,0 +1,19 @@
+opam-version: "2.0"
+maintainer: "Hoang-Hai Dang <haidang@mpi-sws.org>"
+authors: "The GPFSL Team"
+license: "BSD-3-Clause"
+homepage: "https://gitlab.mpi-sws.org/iris/gpfsl"
+bug-reports: "https://gitlab.mpi-sws.org/iris/gpfsl/issues"
+dev-repo: "git+https://gitlab.mpi-sws.org/iris/gpfsl.git"
+version: "dev"
+
+synopsis: "A combination of GPS and FSL in the promising semantics WITHOUT promises"
+
+depends: [
+  "coq-iris"  { (= "dev.2022-05-13.5.de41b20f") | (= "dev") }
+  "coq-orc11" { (= "dev.2022-05-15.0.aed4b2f2") | (= "dev") }
+]
+
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+url { src: "git+https://gitlab.mpi-sws.org/iris/gpfsl.git#f780f022348233ea19e07adc737f1988c37bcc2f" }
