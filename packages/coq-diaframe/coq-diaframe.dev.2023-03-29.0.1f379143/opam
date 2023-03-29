@@ -1,0 +1,19 @@
+opam-version: "2.0"
+name: "coq-diaframe"
+version: "dev"
+synopsis: "Diaframe: Automation for Iris"
+maintainer: "Ike Mulder <me@ikemulder.nl>"
+authors: "Ike Mulder <me@ikemulder.nl>"
+homepage: "https://gitlab.mpi-sws.org/iris/diaframe/"
+bug-reports: "https://gitlab.mpi-sws.org/iris/diaframe/-/issues"
+depends: [
+  "coq-iris" { (> "dev.2023-02-16.3.c4a25e41" & <= "dev.2025" ) | (> "3.6.0" & < "1337.0.0") | = "dev" }
+  "coq" { < "8.17~" }
+]
+build: [make "-j%{jobs}%" "diaframe"]
+install: [make "install-diaframe"]
+dev-repo: "git+https://gitlab.mpi-sws.org/iris/diaframe.git"
+
+# 3.6.0 is pre-telescope changes, so we cannot support it
+# 07-27 introduced lc-weakestpre, which seems to have broken some stuff in symb_exec
+url { src: "git+https://gitlab.mpi-sws.org/iris/diaframe.git#1f379143702a60495083586bdfba92278a8ea52c" }
