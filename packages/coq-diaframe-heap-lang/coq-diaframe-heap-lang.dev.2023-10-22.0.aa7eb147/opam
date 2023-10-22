@@ -1,0 +1,17 @@
+opam-version: "2.0"
+name: "coq-diaframe-heap-lang"
+version: "dev"
+synopsis: "Diaframe: Automation for Iris's Heap Lang"
+maintainer: "Ike Mulder <me@ikemulder.nl>"
+authors: "Ike Mulder <me@ikemulder.nl>"
+homepage: "https://gitlab.mpi-sws.org/iris/diaframe/"
+dev-repo: "git+https://gitlab.mpi-sws.org/iris/diaframe.git"
+bug-reports: "https://gitlab.mpi-sws.org/iris/diaframe/-/issues"
+depends: [
+  "coq-diaframe" {= version}
+  "coq-iris-heap-lang"
+  "coq-iris" { (>= "dev.2023-08-30.0.d304f029" & <= "dev.2025" ) | = "dev" } 
+]
+build: [make "-j%{jobs}%" "diaframe-heap-lang"]
+install: [make "install-diaframe-heap-lang"]
+url { src: "git+https://gitlab.mpi-sws.org/iris/diaframe.git#aa7eb1477c0c7f36dbb714f60d41896176495135" }
