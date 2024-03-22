@@ -1,0 +1,18 @@
+opam-version: "2.0"
+maintainer: "Hoang-Hai Dang <haidang@mpi-sws.org>"
+authors: "The ORC11 semantics team"
+license: "BSD-3-Clause"
+homepage: "https://gitlab.mpi-sws.org/iris/orc11"
+bug-reports: "https://gitlab.mpi-sws.org/iris/orc11/issues"
+dev-repo: "git+https://gitlab.mpi-sws.org/iris/orc11.git"
+version: "dev"
+
+synopsis: "A Coq formalization of the ORC11 semantics for weak memory"
+
+depends: [
+  "coq-stdpp" { (= "dev.2024-03-11.0.a8c0c0f8") | (= "dev") }
+]
+
+build: ["./make-package" "orc11" "-j%{jobs}%"]
+install: ["./make-package" "orc11" "install"]
+url { src: "git+https://gitlab.mpi-sws.org/iris/gpfsl.git#2c385241227d9361835ea0834ce25b3626744904" }
