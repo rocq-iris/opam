@@ -1,0 +1,18 @@
+#!/bin/sh
+# Usage:
+#
+#    mv-to-old <old dir> <packages to move...>
+#
+# Moves the packages given on the command line to the "old" repo. Package
+# dirs must be relative to the repo root.
+set -e
+
+OLD_REPO_DIR=$1
+shift
+
+for PKG in "$@"; do
+    PKG_DIR=$(dirname "$PKG")
+    PKG_VER=$(basename "$PKG")
+    mkdir -p "$OLD_REPO_DIR/$PKG_DIR"
+    mv -v "./$PKG_DIR/$PKG_VER" "$OLD_REPO_DIR/$PKG_DIR/$PKG_VER"
+done
