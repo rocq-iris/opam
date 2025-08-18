@@ -10,6 +10,7 @@ version: "dev"
 synopsis: "Compatibility package for rocq-stdpp-bitvector"
 
 depends: [
+  "coq-stdpp" {= version}
   "rocq-stdpp-bitvector" {= version}
 ]
 url { src: "git+https://gitlab.mpi-sws.org/iris/stdpp.git#2d5412f48adadeb69fb3115da4d83075c9ba15bf" }

@@ -10,6 +10,7 @@ version: "dev"
 synopsis: "Compatibility package for rocq-stdpp-unstable"
 
 depends: [
+  "coq-stdpp" {= version}
   "rocq-stdpp-unstable" {= version}
 ]
 url { src: "git+https://gitlab.mpi-sws.org/iris/stdpp.git#8e4575e6f3c444677cf2b6848f0ee8968c24b9c6" }
