@@ -1,0 +1,16 @@
+opam-version: "2.0"
+name: "coq-diaframe"
+version: "dev"
+synopsis: "Diaframe: Automation for Iris"
+maintainer: "Ike Mulder <me@ikemulder.nl>"
+authors: "Ike Mulder <me@ikemulder.nl>"
+homepage: "https://gitlab.mpi-sws.org/iris/diaframe/"
+bug-reports: "https://gitlab.mpi-sws.org/iris/diaframe/-/issues"
+depends: [
+  "coq-iris" { (>= "dev.2025-07-17.0.dbc3e879" & <= "dev.2025-08-29.0.a7baafa9" ) | = "dev" }
+  "coq" { >= "8.19" & < "8.21~" }
+]
+build: [make "-j%{jobs}%" "diaframe"]
+install: [make "install-diaframe"]
+dev-repo: "git+https://gitlab.mpi-sws.org/iris/diaframe.git"
+url { src: "git+https://gitlab.mpi-sws.org/iris/diaframe.git#d4cda7fc6383d6a4ff981cf0b81d5ec5379c2000" }
