@@ -1,0 +1,16 @@
+opam-version: "2.0"
+name: "rocq-diaframe-heap-lang"
+version: "dev"
+synopsis: "Diaframe: Automation for Iris's Heap Lang"
+maintainer: "Ike Mulder <me@ikemulder.nl>"
+authors: "Ike Mulder <me@ikemulder.nl>"
+homepage: "https://gitlab.mpi-sws.org/iris/diaframe/"
+dev-repo: "git+https://gitlab.mpi-sws.org/iris/diaframe.git"
+bug-reports: "https://gitlab.mpi-sws.org/iris/diaframe/-/issues"
+depends: [
+  "rocq-diaframe" {= version}
+  "rocq-iris-heap-lang"
+]
+build: [make "-j%{jobs}%" "diaframe-heap-lang"]
+install: [make "install-diaframe-heap-lang"]
+url { src: "git+https://gitlab.mpi-sws.org/iris/diaframe.git#5fd155529c0a0b1ad3e64e75570066303eaf5c99" }
