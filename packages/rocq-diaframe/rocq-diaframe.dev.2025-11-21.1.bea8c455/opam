@@ -1,0 +1,19 @@
+opam-version: "2.0"
+name: "rocq-diaframe"
+version: "dev"
+synopsis: "Diaframe: Automation for Iris"
+maintainer: "Ike Mulder <me@ikemulder.nl>"
+authors: "Ike Mulder <me@ikemulder.nl>"
+homepage: "https://gitlab.mpi-sws.org/iris/diaframe/"
+bug-reports: "https://gitlab.mpi-sws.org/iris/diaframe/-/issues"
+depends: [
+  "rocq-iris" { (>= "dev.2025-10.0.de96caea" & <= "dev.2025-11-18.0.fde0f869" ) | = "dev" }
+  "coq" { >= "8.20" & < "9.1~" }
+]
+conflicts: [
+  "coq-iris" {<= "dev.2025-08-29.0.f8c949ec" }
+]
+build: [make "-j%{jobs}%" "diaframe"]
+install: [make "install-diaframe"]
+dev-repo: "git+https://gitlab.mpi-sws.org/iris/diaframe.git"
+url { src: "git+https://gitlab.mpi-sws.org/iris/diaframe.git#bea8c4555d193ebaccd4f4cbb2587b80eee22bf3" }
