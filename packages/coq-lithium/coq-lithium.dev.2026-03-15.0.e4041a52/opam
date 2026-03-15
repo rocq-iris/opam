@@ -1,0 +1,29 @@
+opam-version: "2.0"
+name: "coq-lithium"
+synopsis: "Lithium proof automation for Iris"
+description: """
+Lithium proof automation for Iris
+"""
+license: "BSD-3-Clause"
+
+maintainer: ["Michael Sammler <msammler@mpi-sws.org>"
+             "Rodolphe Lepigre <lepigre@mpi-sws.org>"]
+authors: ["Michael Sammler" "Rodolphe Lepigre"]
+
+homepage: "https://plv.mpi-sws.org/refinedc"
+bug-reports: "https://gitlab.mpi-sws.org/iris/refinedc/issues"
+dev-repo: "git+https://gitlab.mpi-sws.org/iris/refinedc.git"
+
+depends: [
+  "coq" { (= "9.1.0" ) }
+  "rocq-iris" { (= "dev.2026-03-12.0.082163cf") | (= "dev") }
+  "rocq-stdpp-unstable"
+  "dune" {>= "3.21.0"}
+  "coq-record-update" {= "0.3.6"}
+]
+
+build: [
+  ["dune" "subst"] {pinned}
+  ["dune" "build" "-p" name "-j" jobs]
+]
+url { src: "git+https://gitlab.mpi-sws.org/iris/refinedc.git#e4041a521dc3554435a9e3a3260d88c53e9b3cff" }
