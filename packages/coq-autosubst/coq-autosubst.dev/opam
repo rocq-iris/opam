@@ -19,7 +19,8 @@ substitutions."""
 build: [make "-j%{jobs}%"]
 install: [make "install"]
 depends: [
-  "coq" {>= "8.14"}
+  "coq-core" {>= "8.17"}
+  "coq-stdlib"
 ]
 
 tags: [
