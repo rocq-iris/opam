@@ -1,0 +1,20 @@
+opam-version: "2.0"
+maintainer: "Ralf Jung <jung@mpi-sws.org>"
+authors: "The Iris Team and Contributors"
+homepage: "http://iris-project.org/"
+bug-reports: "https://gitlab.mpi-sws.org/iris/examples/issues"
+dev-repo: "git+https://gitlab.mpi-sws.org/iris/examples.git"
+
+synopsis: "A collection of case studies for Iris -- not meant to be used as a dependency of anything"
+
+depends: [
+  "rocq-iris-heap-lang" { (= "dev.2026-07-19.0.5b67fadf") | (= "dev") }
+  "coq-autosubst" { = "dev" }
+]
+conflicts: [
+  "coq-iris-examples"
+]
+
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+url { src: "git+https://gitlab.mpi-sws.org/iris/examples.git#ecbfbc6b6e0942d3bfc9894b47da73553a7003d7" }
