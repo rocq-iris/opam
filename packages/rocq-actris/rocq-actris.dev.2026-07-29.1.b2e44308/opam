@@ -1,0 +1,19 @@
+opam-version: "2.0"
+maintainer: "Robbert Krebbers"
+synopsis: "Actris: Session protocol reasoning in Iris"
+homepage: "https://gitlab.mpi-sws.org/iris/actris"
+authors: "The Actris Team"
+license: "BSD-3-Clause"
+bug-reports: "https://gitlab.mpi-sws.org/iris/actris/issues"
+dev-repo: "git+https://gitlab.mpi-sws.org/iris/actris.git"
+
+depends: [
+  "rocq-iris-heap-lang" { (= "dev.2026-07-29.6.2434a208") | (= "dev") }
+]
+conflicts: [
+  "coq-actris"
+]
+
+build: ["./make-package" "actris" "-j%{jobs}%"]
+install: ["./make-package" "actris"  "install"]
+url { src: "git+https://gitlab.mpi-sws.org/iris/actris.git#b2e4430812befc5fbd4971d6204744edf6d06a7f" }
