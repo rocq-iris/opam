@@ -1,0 +1,21 @@
+opam-version: "2.0"
+maintainer: "Ralf Jung <jung@mpi-sws.org>"
+authors: "The RustBelt Team"
+license: "BSD-3-Clause"
+homepage: "https://plv.mpi-sws.org/rustbelt/"
+bug-reports: "https://gitlab.mpi-sws.org/iris/lambda-rust/issues"
+dev-repo: "git+https://gitlab.mpi-sws.org/iris/lambda-rust.git"
+
+synopsis: "LambdaRust Coq formalization"
+description: """
+A formal model of a Rust core language and type system, a logical relation for
+the type system, and safety proof for some Rust libraries.
+"""
+
+depends: [
+  "coq-lifetime-logic" { = version }
+]
+
+build: ["./make-package" "lambda-rust" "-j%{jobs}%"]
+install: ["./make-package" "lambda-rust" "install"]
+url { src: "git+https://gitlab.mpi-sws.org/iris/lambda-rust.git#75e7f801e8da23b85cd05cf26d15c573674bee6a" }
