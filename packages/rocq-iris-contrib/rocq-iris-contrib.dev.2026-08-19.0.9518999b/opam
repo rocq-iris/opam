@@ -1,0 +1,25 @@
+opam-version: "2.0"
+maintainer: "Vincent Lafeychine <vincent.lafeychine@proton.me>, Lennard Gäher <gaeher@mpi-sws.org>"
+authors: "Iris contributors"
+license: "BSD-3-Clause"
+homepage: "https://iris-project.org/"
+bug-reports: "https://gitlab.mpi-sws.org/iris/iris-contrib/issues"
+dev-repo: "git+https://gitlab.mpi-sws.org/iris/iris-contrib.git"
+version: "dev"
+
+synopsis: "Community contributions to the Higher-Order Concurrent Separation Logic Framework Iris"
+description: """
+Iris-contrib contains community contributions to Iris.
+"""
+tags: [
+]
+
+depends: [
+  "rocq-core" { (>= "9.0" & < "9.3~") | (= "dev") }
+  "rocq-stdlib" { (>= "9.0") | (= "dev") }
+  "rocq-iris" { (= "dev.2026-08-19.0.44bcb000") | (= "dev") }
+]
+
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+url { src: "git+https://gitlab.mpi-sws.org/iris/iris-contrib.git#9518999b0fa262db6aee380095b1efe91fa03c7a" }
