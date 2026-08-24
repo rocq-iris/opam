@@ -1,0 +1,20 @@
+opam-version: "2.0"
+maintainer: "Ralf Jung <jung@mpi-sws.org>"
+authors: "The RustBelt Team"
+license: "BSD-3-Clause"
+homepage: "https://plv.mpi-sws.org/rustbelt/"
+bug-reports: "https://gitlab.mpi-sws.org/iris/lambda-rust/issues"
+dev-repo: "git+https://gitlab.mpi-sws.org/iris/lambda-rust.git"
+
+synopsis: "Lifetime Logic Coq formalization"
+description: """
+The lifetime logic extends Iris with a notion of "borrowing".
+"""
+
+depends: [
+  "rocq-iris" { (= "dev.2026-08-23.1.df041618") | (= "dev") }
+]
+
+build: ["./make-package" "lifetime" "-j%{jobs}%"]
+install: ["./make-package" "lifetime" "install"]
+url { src: "git+https://gitlab.mpi-sws.org/iris/lambda-rust.git#ed0a55b59f7a53c33ee50af0761417a335557f73" }
